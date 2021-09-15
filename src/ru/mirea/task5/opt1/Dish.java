@@ -1,6 +1,6 @@
 package ru.mirea.task5.opt1;
 
-public class Dish {
+ public abstract class Dish {
     private String type;
     private int metal_ornament;
     private int heigth;
