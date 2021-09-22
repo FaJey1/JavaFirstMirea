@@ -25,6 +25,6 @@ public class Book {
     }
 
     public String output(){
-        return (genre + " " + author + " " + pageSize.toString());
+        return ("genre: " + genre + " author: " + author + " page size: " + pageSize.toString());
     }
 }
