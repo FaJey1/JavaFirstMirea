@@ -1,4 +1,4 @@
-package ru.mirea.task2.opt1;
+package ru.mirea.task3.opt1;
 
 public class Circle {
     private double radius;

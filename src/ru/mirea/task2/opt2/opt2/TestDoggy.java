@@ -1,6 +1,4 @@
-package ru.mirea.task5.opt2;
-
-import java.util.Scanner;
+package ru.mirea.task2.opt2.opt2;
 
 public class TestDoggy {
     public static void main(String[] args) {

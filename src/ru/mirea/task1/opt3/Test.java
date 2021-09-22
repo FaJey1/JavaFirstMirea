@@ -1,5 +1,7 @@
 package ru.mirea.task1.opt3;
 
+import java.util.Arrays;
+
 public class Test {
 
     public static void main(String[] args){
@@ -20,9 +22,27 @@ public class Test {
         System.out.println(' ');
         k = 0;
 
-        while(k!=12){
+        while(k!=12) {
             System.out.println(s[k]);
             k++;
+        }
+        for(int i = 1; i <= 10; i++){
+            System.out.println("1/"+i);
+        }
+        System.out.println();
+        int[] array = new int[10];
+        for(int i = 0; i < 10; i++){
+            array[i] = (int)(Math.random()*6);
+        }
+
+        for(int i = 0; i < 10; i++){
+            System.out.print(array[i]+ " ");
+        }
+        System.out.println();
+        Arrays.sort(array);
+
+        for(int i = 0; i < 10; i++){
+            System.out.print(array[i]+ " ");
         }
     }
 }

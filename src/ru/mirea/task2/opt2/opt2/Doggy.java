@@ -1,4 +1,4 @@
-package ru.mirea.task5.opt2;
+package ru.mirea.task2.opt2.opt2;
 
 public class Doggy {
     private String name;
