@@ -7,23 +7,35 @@ import javafx.scene.control.TextField;
 public class HelloController{
     public String num;
     public Integer p  = 0;
+    public int n;
 
     @FXML
-    private Label text, text3;
-    private TextField text2;
+    public TextField text4;
+
+    @FXML
+    private Label text, text3, text2;
+
+    public HelloController() {
+        n = (int)(0+Math.random()*20);
+        num = String.valueOf(n);
+    }
+
 
     @FXML
     protected void onClick() {
-        if (text2.getText() == num){
-            text.setText("Your winner");
+        text.setText("Число "+ num);
+        int a = Integer.parseInt(text4.getText());
+        if(p!=3) {
+            if (a == n) {
+                text2.setText("Your winner");
+            } else {
+                text2.setText("Try again");
+                p++;
+                text3.setText(p.toString());
+            }
+            if (p == 3) {
+                text2.setText("You lose");
+            }
         }
-        else if (p != 3)
-        {
-            p++;
-            text.setText("Try again");
-        }
-        if (p == 3)
-            text.setText("Your lose");
-        text3.setText(p.toString());
     }
 }
