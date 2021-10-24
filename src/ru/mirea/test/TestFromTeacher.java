@@ -1,11 +1,21 @@
 package ru.mirea.test;
 
+import java.util.Scanner;
+
 public class TestFromTeacher {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Это класс для тестирования;");
-        System.out.println("Если он запускается - скорее всего, у вас всё настроено правильно;");
-        System.out.println("Вы можете удалить этот класс и пакет.");
+	    Cardstest cardstest = new Cardstest();
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 5; i++){
+            int a = scanner.nextInt();
+            cardstest.inputPlayerCard(1, a);
+        }
+        for (int i = 0; i < 5; i++){
+            int a = scanner.nextInt();
+            cardstest.inputPlayerCard(2, a);
+        }
+        //cardstest.output();
+        System.out.println(cardstest.playGame());
     }
 }
