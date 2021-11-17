@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CardsGame" />
-        <module name="opt1" />
         <module name="tk9" />
         <module name="MouseEvent" />
         <module name="JTextArea" />
+        <module name="EventMouse" />
+        <module name="TheGame" />
+        <module name="CardsGame" />
+        <module name="opt1" />
         <module name="GuessNubmer" />
       </profile>
     </annotationProcessing>
