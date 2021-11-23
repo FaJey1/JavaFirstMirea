@@ -1,4 +1,6 @@
-package ru.mirea.task18;
+package ru.mirea.task20;
+
+import java.util.*;
 
 public class Client {
     private int bankAccount;
@@ -7,6 +9,7 @@ public class Client {
     private String lastName;
     private String firstName;
     private String ClientStatus;
+    private Deque <String> history;
 
     public String getPinCode() {
         return pinCode;
@@ -21,16 +24,21 @@ public class Client {
         this.lastName = lastName;
         this.firstName = firstName;
         this.pinCode = pinCode;
-        ClientStatus = clientStatus;
+        this.ClientStatus = clientStatus;
+        this.history = new LinkedList<>();;
     }
 
     public String getName(){
         return (firstName + " " + lastName);
     }
     public void setName(String lName, String fName){
+        try{
             lastName = lName;
             firstName = fName;
-
+        }
+        catch (NullPointerException e){
+            System.out.println("Exception was processed. Program continues");
+        }
     }
 
     public int getBankAccount()  {
@@ -50,9 +58,13 @@ public class Client {
     }
 
     public void setClientStatus(String clientStatus) {
-
+        try{
             ClientStatus = clientStatus;
         }
+        catch (NullPointerException e){
+            System.out.println("Exception was processed. Program continues");
+        }
+    }
 
     public String viewInvoice(){
         return "Остаток на счете " + sum;
@@ -60,7 +72,18 @@ public class Client {
 
     public void transferMoney(int bankAccount, int sum){
         /* Перевод другому клиенту*/
-        this.sum = this.sum - sum;
+        try {
+            this.sum = this.sum - sum;
+            if(this.sum < 0){
+                throw new Exception("нельзя перевести отрицательную сумму");
+            }
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        Calendar calendar = new GregorianCalendar();
+        Date date = calendar.getTime();
         System.out.println("Вы перевели клиенту №" + bankAccount + " сумму " + sum);
+        history.addLast(date + " Вы перевели клиенту №" + bankAccount + " сумму " + sum);
     }
 }

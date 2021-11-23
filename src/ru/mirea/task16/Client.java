@@ -6,6 +6,7 @@ public class Client {
     private String pinCode;
     private String lastName;
     private String firstName;
+    private String ClientStatus;
 
     public String getPinCode() {
         return pinCode;
@@ -15,14 +16,12 @@ public class Client {
         this.pinCode = pinCode;
     }
 
-    private String ClientStatus;
-
-    public Client(int bankAccount, String lastName, String firstName, String clientStatus, String pinCode) {
+    public Client(int id, int bankAccount, String lastName, String firstName, String clientStatus, String pinCode) {
         this.bankAccount = bankAccount;
         this.lastName = lastName;
         this.firstName = firstName;
         this.pinCode = pinCode;
-        ClientStatus = clientStatus;
+        this.ClientStatus = clientStatus;
     }
 
     public String getName(){
